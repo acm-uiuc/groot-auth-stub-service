@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'json'
+
 set :port, 8008
 
 fake_token = "this-is-a-fake-token"
@@ -20,33 +22,39 @@ post '/session' do
       "name": fake_user[:name]
     },
     "link": {
-      "href": "url/session/#{fake_token}",
+      "href": "#{request.base_url}/session/#{fake_token}",
       "rel": "self"
     }
   }.to_json
 end
 
 delete '/session' do
-  "OK"
+  {
+    "message": "OK"
+  }.to_json
 end
 
 get '/session/:token' do
-  halt 500, "Invalid credentials" unless params[:token] == fake_user[:token]
+  halt 500, "Invalid credentials" unless params[:token] == fake_token
 
   {
     "token": fake_token,
     "user": fake_user,
     "link": {
-      "href": "url/session/#{fake_token}",
+      "href": "#{request.base_url}/session/#{fake_token}",
       "rel": "self"
     }
   }.to_json
 end
 
 post '/session/:token' do
-  "OK"
+  {
+    "message": "OK"
+  }.to_json
 end
 
 delete '/session/:token' do
-  "OK"
+  {
+    "message": "OK"
+  }.to_json
 end
