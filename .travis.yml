@@ -1,13 +1,12 @@
 language: ruby
-
 rvm:
-  - 2.2
-
+- 2.2
 before_install:
-  - gem update bundler
-
+- gem update bundler
 install:
-  - bundle install
-  - gem install rubocop
-
+- bundle install
+- gem install rubocop
 script: rubocop *
+notifications:
+  slack:
+    secure: g581IL9ZxIcdnXmj5DIg0s7zZGPtgaO6VIj+zYGLVCwMCuUGYd9GrS9taXw0vgEt8vfo5MoIwDeRdsB8n7G/DTBUxNb3m7BD/X/vzZcGs8pjCM98Ov210FUrwuUqr6CAvIF0rs0yWf+lCs2ihBzVwUPV8gIISmFp5waoxdXPuVq4X60Q76sbs63xkbLbTL75d72xUyCq9DJkawHdlvZNElxZ+Hil2IZ8IEvowydhPwx5WcK6t/XO1CG8huVEqGtAbOhfu3/Vo1HQ8eeC06MyY5blgDlv/wMYf6I7Kelo7/9N7L7GL7A3OoygydY08eQ+t7l0wo1SKNlFcDDU2RwTM9eHGX5AYOYqCuIPKqcgOcnhDGnF7uVYOIN02hlfAdczjJ9IxmH/PMV+3hZ4qqcQ2vO3Rqt/o5dwCZN3uRbeRnMZZ/088TWX18/7e/M77713L7csQSi18AkZd+4FGVsT6lBjShhNq53jb1si0tnEVTbAqGmhsMaM8PDErgEp7XqEVPkBbboBGboV2GtRX0g4kl9cE5JiY+3gkJg0rE0mUg+LzqdwcrFU7LQnoRUu/iW9yiPh7ZnXDS8g2Wb44fu9tt2Zs7ynHkLipIAC0aM6CLSpU3FlPOKBYGsyQBooWmRDxAg3YDSAQA+5zSdCUkhC34B+n1sh9Xw7C1BBJPmUHnA=
