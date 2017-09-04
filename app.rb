@@ -7,6 +7,7 @@
 # this license in a file with the distribution.
 
 require 'sinatra'
+require 'sinatra/reloader' if development?
 require 'json'
 
 set :port, 8008
