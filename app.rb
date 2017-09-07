@@ -26,10 +26,10 @@ post '/session' do
     'token' => fake_token,
     'user' => {
       'link' => {
-        'href' => "#{request.base_url}/user?username=#{fake_user[:name]}",
+        'href' => "#{request.base_url}/user?username=#{fake_user['name']}",
         'rel' => 'self'
       },
-      'name' => fake_user[:name]
+      'name' => fake_user['name']
     },
     'link' => {
       'href' => "#{request.base_url}/session/#{fake_token}",
