@@ -11,6 +11,7 @@ require 'sinatra/reloader' if development?
 require 'json'
 
 set :port, 8008
+set :bind, '0.0.0.0'
 
 fake_token = 'this-is-a-fake-token'
 fake_user = {
